@@ -1,31 +1,31 @@
 // star_model.dart
 class Star {
-  final int id;
-  final String starName;
-  final String age;
-  final String timeBeforeDeath;
-  final String size;
-  final String earthsItCouldFit;
-  final String distanceFromEarth;
-  final String discoveryYear;
-  final String galaxy;
-  final String starType;
-  final String sunsItCouldFit;
-  final String interestingFact;
+  final int? id;
+  final String? starName;
+  final String? age;
+  final String? timeBeforeDeath;
+  final String? size;
+  final String? earthsItCouldFit;
+  final String? distanceFromEarth;
+  final String? discoveryYear;
+  final String? galaxy;
+  final String? starType;
+  final String? sunsItCouldFit;
+  final String? interestingFact;
 
   Star({
-    required this.id,
-    required this.starName,
-    required this.age,
-    required this.timeBeforeDeath,
-    required this.size,
-    required this.earthsItCouldFit,
-    required this.distanceFromEarth,
-    required this.discoveryYear,
-    required this.galaxy,
-    required this.starType,
-    required this.sunsItCouldFit,
-    required this.interestingFact,
+    this.id,
+    this.starName,
+    this.age,
+    this.timeBeforeDeath,
+    this.size,
+    this.earthsItCouldFit,
+    this.distanceFromEarth,
+    this.discoveryYear,
+    this.galaxy,
+    this.starType,
+    this.sunsItCouldFit,
+    this.interestingFact,
   });
 
   factory Star.fromJson(Map<String, dynamic> json) {

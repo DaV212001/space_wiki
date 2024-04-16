@@ -6,8 +6,8 @@ class BlackHoleService {
   final supabase = Supabase.instance.client;
 
   Future<List<BlackHole>> fetchBlackHoles() async {
-    final response = await supabase.from('Black_Holes').select('*').count();
-    final List<dynamic> responseData = response as List<dynamic>;
+    final response = await supabase.from('Black_Holes').select();
+    final responseData = response;
     return responseData.map((data) => BlackHole.fromJson(data)).toList();
   }
 

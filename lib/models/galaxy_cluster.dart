@@ -1,21 +1,21 @@
 // galaxy_cluster_model.dart
 class GalaxyCluster {
-  final int id;
-  final String galaxyClusterName;
-  final String numberOfGalaxies;
-  final String totalMass;
-  final String distanceFromEarth;
-  final String notableMemberGalaxies;
-  final String discoveryYear;
+  final int? id;
+  final String? galaxyClusterName;
+  final String? numberOfGalaxies;
+  final String? totalMass;
+  final String? distanceFromEarth;
+  final String? notableMemberGalaxies;
+  final String? discoveryYear;
 
   GalaxyCluster({
-    required this.id,
-    required this.galaxyClusterName,
-    required this.numberOfGalaxies,
-    required this.totalMass,
-    required this.distanceFromEarth,
-    required this.notableMemberGalaxies,
-    required this.discoveryYear,
+    this.id,
+    this.galaxyClusterName,
+    this.numberOfGalaxies,
+    this.totalMass,
+    this.distanceFromEarth,
+    this.notableMemberGalaxies,
+    this.discoveryYear,
   });
 
   factory GalaxyCluster.fromJson(Map<String, dynamic> json) {

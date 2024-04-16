@@ -1,19 +1,19 @@
 // space_term_model.dart
 class SpaceTerm {
-  final int id;
-  final String term;
-  final String definition;
-  final String originators;
-  final String age;
-  final String partOfSpeech;
+  final int? id;
+  final String? term;
+  final String? definition;
+  final String? originators;
+  final String? age;
+  final String? partOfSpeech;
 
   SpaceTerm({
-    required this.id,
-    required this.term,
-    required this.definition,
-    required this.originators,
-    required this.age,
-    required this.partOfSpeech,
+    this.id,
+    this.term,
+    this.definition,
+    this.originators,
+    this.age,
+    this.partOfSpeech,
   });
 
   factory SpaceTerm.fromJson(Map<String, dynamic> json) {

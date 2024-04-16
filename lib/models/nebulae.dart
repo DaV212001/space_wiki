@@ -1,23 +1,23 @@
 // nebula_model.dart
 class Nebula {
-  final int id;
-  final String nebulaName;
-  final String type;
-  final String distanceFromEarth;
-  final String diameter;
-  final String composition;
-  final String notableFeatures;
-  final String discoveryYear;
+  final int? id;
+  final String? nebulaName;
+  final String? type;
+  final String? distanceFromEarth;
+  final String? diameter;
+  final String? composition;
+  final String? notableFeatures;
+  final String? discoveryYear;
 
   Nebula({
-    required this.id,
-    required this.nebulaName,
-    required this.type,
-    required this.distanceFromEarth,
-    required this.diameter,
-    required this.composition,
-    required this.notableFeatures,
-    required this.discoveryYear,
+    this.id,
+    this.nebulaName,
+    this.type,
+    this.distanceFromEarth,
+    this.diameter,
+    this.composition,
+    this.notableFeatures,
+    this.discoveryYear,
   });
 
   factory Nebula.fromJson(Map<String, dynamic> json) {

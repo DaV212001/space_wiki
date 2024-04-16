@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:space_wiki/configs/constants.dart';
 import 'package:space_wiki/screens/home_screen.dart';
+import 'package:space_wiki/screens/main_layout_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'configs/config_preference.dart';
@@ -37,7 +38,7 @@ class _MyAppState extends State<MyApp> {
       theme: appTheme(context, isDark: true),
       darkTheme: appTheme(context, isDark: true),
       themeMode: ThemeController.getThemeMode(),
-      home:  HomeScreen(),
+      home:  MainLayoutScreen(),
     );
   }
 }
