@@ -1,17 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../constants/app_constants.dart';
-import '../models/space_term.dart';
-
-
 
 class HeaderImageAndButtons extends StatelessWidget {
   const HeaderImageAndButtons({
     super.key,
-    this.text, this.imageUrl,
+    this.text,
+    this.imageUrl,
   });
 
   final String? imageUrl;
@@ -25,17 +21,19 @@ class HeaderImageAndButtons extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: imageUrl == null? Image.asset(
-            KDefImageJ,
-            width: double.infinity,
-            height: 120,
-            fit: BoxFit.cover,
-          ).image : Image.network(
-            imageUrl!,
-            width: double.infinity,
-            height: 120,
-            fit: BoxFit.cover,
-          ).image,
+          image: imageUrl == null
+              ? Image.asset(
+                  KDefImageJ,
+                  width: double.infinity,
+                  height: 120,
+                  fit: BoxFit.cover,
+                ).image
+              : Image.network(
+                  imageUrl!,
+                  width: double.infinity,
+                  height: 120,
+                  fit: BoxFit.cover,
+                ).image,
         ),
         boxShadow: [
           BoxShadow(
@@ -63,7 +61,7 @@ class HeaderImageAndButtons extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Get.back();
                   },
                   child: Container(
@@ -75,37 +73,14 @@ class HeaderImageAndButtons extends StatelessWidget {
                       shape: BoxShape.circle,
                     ),
                     child: const Center(
-                        child: Icon(
-                          Icons.arrow_back_ios_new_rounded,
-                          size: 20,
-                          color: Colors.black,
-                        ),
+                      child: Icon(
+                        Icons.arrow_back_ios_new_rounded,
+                        size: 20,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),
-                // Row(
-                //   mainAxisSize: MainAxisSize.max,
-                //   children: [
-                //
-                //     ElevatedButton(
-                //       style: ElevatedButton.styleFrom(
-                //         shape: CircleBorder(
-                //           side: BorderSide(
-                //             color: Colors.transparent,
-                //           )
-                //         )
-                //       ),
-                //
-                //       child: Icon(
-                //         Icons.keyboard_control_outlined,
-                //         size: 20,
-                //       ),
-                //       onPressed: () {
-                //         print('IconButton pressed ...');
-                //       },
-                //     ),
-                //   ],
-                // ),
               ],
             ),
           ],

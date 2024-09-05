@@ -18,8 +18,8 @@ ThemeData appTheme(BuildContext context, {bool? isDark}) {
         style: ButtonStyle(
             minimumSize: MaterialStateProperty.all(
                 Size(MediaQuery.of(context).size.width * 0.95, 50)),
-            backgroundColor: MaterialStatePropertyAll(themeColor.primary),
+            backgroundColor: MaterialStatePropertyAll(Colors.grey[800]),
             overlayColor:
-                MaterialStatePropertyAll(themeColor.onPrimaryContainer)),
+                MaterialStatePropertyAll(Colors.grey.withOpacity(0.2)),),
       ));
 }

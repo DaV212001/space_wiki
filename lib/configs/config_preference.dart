@@ -9,7 +9,7 @@ class ConfigPreference {
 
   // STORING KEYS
   static const String _lightThemeKey = 'is_theme_light';
-  static const String _isFirstLaunchKey = 'is_first_launch';
+  static const String _isFirstLaunchKey = 'first_launch';
   static const String _appLanguageCode = 'app_language_code';
   static const String _appLanguageCountryCode = 'app_language_country_code';
 

@@ -24,18 +24,14 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
-
     List<Widget> buildScreens() {
       return [
         const HomeScreen(),
         const SpaceObjectsScreen(),
         const SpaceTermsScreen(),
       ];
-
     }
 
     return Scaffold(
@@ -45,25 +41,28 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
         controller: _controller,
         screens: buildScreens(),
         items: _navBarsItems(),
-        confineInSafeArea: true,
-        itemAnimationProperties: const ItemAnimationProperties(
-          duration: Duration(milliseconds: 200),
-          curve: Curves.ease,
+        confineToSafeArea: true,
+        animationSettings: const NavBarAnimationSettings(
+          navBarItemAnimation: ItemAnimationSettings(
+            duration: Duration(milliseconds: 200),
+            curve: Curves.ease,
+          ),
+          screenTransitionAnimation: ScreenTransitionAnimationSettings(
+            animateTabTransition: true,
+            screenTransitionAnimationType: ScreenTransitionAnimationType.slide,
+            curve: Curves.ease,
+            duration: Duration(milliseconds: 200),
+          ),
         ),
-        screenTransitionAnimation: const ScreenTransitionAnimation(
-          animateTabTransition: true,
-          curve: Curves.ease,
-          duration: Duration(milliseconds: 200),
-        ),
-        navBarStyle: NavBarStyle.style9,
+        navBarStyle: NavBarStyle.style11,
         navBarHeight: 60,
       ),
     );
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
-    Color activeColor = Colors.grey;
-    Color inactiveColor = Colors.black;
+    Color activeColor = Colors.white;
+    Color inactiveColor = Colors.white24;
     return [
       PersistentBottomNavBarItem(
           icon: Icon(
@@ -75,11 +74,11 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
             color: inactiveColor,
           ),
           title: ('Home'),
-          textStyle: const TextStyle(fontSize: 10),
+          textStyle: const TextStyle(fontFamily: 'Poppins', fontSize: 10),
           activeColorPrimary: activeColor,
           inactiveColorPrimary: inactiveColor,
           routeAndNavigatorSettings:
-          const RouteAndNavigatorSettings(initialRoute: AppRoutes.home)),
+              const RouteAndNavigatorSettings(initialRoute: AppRoutes.home)),
       PersistentBottomNavBarItem(
           icon: Icon(
             FontAwesomeIcons.earthAfrica,
@@ -90,7 +89,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
             color: inactiveColor,
           ),
           title: ('Space objects'),
-          textStyle: const TextStyle(fontSize: 10),
+          textStyle: const TextStyle(fontFamily: 'Poppins', fontSize: 10),
           activeColorPrimary: activeColor,
           inactiveColorPrimary: inactiveColor),
       PersistentBottomNavBarItem(
@@ -103,7 +102,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
             color: inactiveColor,
           ),
           title: ('Space terms'),
-          textStyle: const TextStyle(fontSize: 10),
+          textStyle: const TextStyle(fontFamily: 'Poppins', fontSize: 10),
           activeColorPrimary: activeColor,
           inactiveColorPrimary: inactiveColor),
     ];

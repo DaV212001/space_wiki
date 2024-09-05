@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
 class HomeScreenHeader extends StatelessWidget {
   const HomeScreenHeader({
     super.key,
@@ -8,6 +8,7 @@ class HomeScreenHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User user = Supabase.instance.client.auth.currentUser!;
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
@@ -35,12 +36,13 @@ class HomeScreenHeader extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(
+                Row(
                   children: [
                     Text('Hello, ',
                         style: TextStyle(
-                            fontFamily: 'Poppins',)),
-                    Text('Space Wanderer',
+                          fontFamily: 'Poppins',
+                        )),
+                    Text(user.userMetadata?['first_name'] ?? "Space Wanderer",
                         style: TextStyle(
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold)),
@@ -53,7 +55,7 @@ class HomeScreenHeader extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 8,bottom: 8),
+              padding: const EdgeInsets.only(top: 8, bottom: 8),
               child: Hero(
                   tag: 'Search',
                   child: GestureDetector(
@@ -63,10 +65,7 @@ class HomeScreenHeader extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
-                            border: Border.all(
-                                width: 2
-                            )
-                        ),
+                            border: Border.all(width: 2)),
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Row(
@@ -75,7 +74,8 @@ class HomeScreenHeader extends StatelessWidget {
                                 Text(
                                   'Search for space objects',
                                   style: TextStyle(
-                                      fontFamily: 'Poppins',),
+                                    fontFamily: 'Poppins',
+                                  ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.all(8.0),

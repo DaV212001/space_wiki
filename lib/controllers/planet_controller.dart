@@ -15,13 +15,13 @@ class PlanetController extends GetxController {
   }
 
   Future<void> fetchPlanets() async {
-    try {
+    // try {
       final List<Planet> fetchedPlanets = await _planetService.fetchPlanets();
       print('CHECKING DATA: fetchedPlanets: ${fetchedPlanets.length}');
       planets.assignAll(fetchedPlanets);
-    } catch (e) {
-      throw Exception('Failed to load planets: $e');
-    }
+    // } catch (e) {
+    //   throw Exception('Failed to load planets: $e');
+    // }
   }
 
   Future<void> fetchSolarPlanets() async {
