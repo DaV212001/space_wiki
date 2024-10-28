@@ -9,9 +9,9 @@ import 'package:space_wiki/screens/space_terms_screen.dart';
 import 'package:space_wiki/widgets/galaxy_card.dart';
 import 'package:space_wiki/widgets/large_content_card.dart';
 import 'package:space_wiki/widgets/small_content_card.dart';
+
 import '../utils/animations.dart';
 import '../widgets/head.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key});
@@ -23,18 +23,15 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const HomeScreenHeader(),
-                _buildPlanetSection(width: width, height: height),
-                _buildSolarPlanetsSection(width: width),
-                _buildGalaxiesSection(width: width),
-              ],
-            ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const HomeScreenHeader(),
+              _buildPlanetSection(width: width, height: height),
+              _buildSolarPlanetsSection(width: width),
+              _buildGalaxiesSection(width: width),
+            ],
           ),
         ),
       ),
@@ -91,9 +88,8 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: LoadingShimmer()
-                        );
+                            padding: const EdgeInsets.all(8.0),
+                            child: LoadingShimmer());
                       },
                     )
                   : ListView.builder(
@@ -172,7 +168,8 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return AnimatedOpacity(
                           duration: Duration(seconds: 1),
-                          opacity: planetController.solarPlanets.isEmpty? 1:0,
+                          opacity:
+                              planetController.solarPlanets.isEmpty ? 1 : 0,
                           child: Shimmer(
                             gradient: LinearGradient(colors: [
                               Colors.black26,
@@ -271,7 +268,7 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return AnimatedOpacity(
                             duration: Duration(seconds: 1),
-                            opacity: galaxyController.galaxies.isEmpty? 1:0,
+                            opacity: galaxyController.galaxies.isEmpty ? 1 : 0,
                             child: Shimmer(
                               gradient: LinearGradient(colors: [
                                 Colors.black26,

@@ -44,7 +44,7 @@ class GalaxyCard extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              buildHeader(width),
+              Expanded(child: buildHeader(width)),
               buildBody(context),
               const Divider(
                 height: 8,

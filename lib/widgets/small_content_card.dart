@@ -67,29 +67,31 @@ class SmallContentCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: height * 0.1,
-            child: Padding(
-              padding: EdgeInsets.all(8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    subtitle ?? 'Some distance away from earth',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      letterSpacing: 0,
+          Expanded(
+            child: SizedBox(
+              height: height * 0.1,
+              child: Padding(
+                padding: EdgeInsets.all(8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      subtitle ?? 'Some distance away from earth',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        letterSpacing: 0,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    size ?? '~~ tons',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      letterSpacing: 0,
+                    SizedBox(height: 4),
+                    Text(
+                      size ?? '~~ tons',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        letterSpacing: 0,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

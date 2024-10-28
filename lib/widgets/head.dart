@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class HomeScreenHeader extends StatelessWidget {
   const HomeScreenHeader({
@@ -8,7 +7,7 @@ class HomeScreenHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    User user = Supabase.instance.client.auth.currentUser!;
+    // User user = Supabase.instance.client.auth.currentUser??Use;
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
@@ -42,7 +41,7 @@ class HomeScreenHeader extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Poppins',
                         )),
-                    Text(user.userMetadata?['first_name'] ?? "Space Wanderer",
+                    Text("Space Wanderer",
                         style: TextStyle(
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold)),

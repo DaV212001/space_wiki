@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:space_wiki/constants/app_constants.dart';
 import 'package:space_wiki/screens/main_layout_screen.dart';
 import 'package:space_wiki/screens/sign_up.dart';
-
-import '../configs/config_preference.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,7 +14,9 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future<Widget> futureCall() async {
-    bool isFirstLaunch = ConfigPreference.isFirstLaunch();
+    var supabase = Supabase.instance.client;
+
+    bool isFirstLaunch = supabase.auth.currentUser == null;
 
     return isFirstLaunch
         ? Future.value(const SignUpWidget())
