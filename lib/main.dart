@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:space_wiki/configs/constants.dart';
 import 'package:space_wiki/screens/main_layout_screen.dart';
@@ -10,7 +11,7 @@ import 'controllers/theme_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await dotenv.load();
   await Supabase.initialize(
     url: Assets.supabase_url,
     anonKey: Assets.anon_key,
