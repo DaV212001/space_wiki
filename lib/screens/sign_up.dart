@@ -10,14 +10,14 @@ import '../widgets/footer.dart';
 import '../widgets/input_field.dart';
 import '../widgets/main_button.dart';
 
-class SignUpWidget extends StatefulWidget {
-  const SignUpWidget({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<SignUpWidget> createState() => _SignUpWidgetState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUpWidgetState extends State<SignUpWidget>
+class _SignUpScreenState extends State<SignUpScreen>
     with TickerProviderStateMixin {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   SignUpController signUpController = Get.put(SignUpController());

@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     bool isFirstLaunch = supabase.auth.currentUser == null;
 
     return isFirstLaunch
-        ? Future.value(const SignUpWidget())
+        ? Future.value(const SignUpScreen())
         : Future.value(const MainLayoutScreen());
   }
 
